@@ -60,7 +60,7 @@ No arquivo `appsettings.json`, configure a *connection string*:
 Crie o banco de dados no PostgreSQL:
 
 ```sql
-CREATE DATABASE produto_db;
+CREATE DATABASE produto;
 ```
 
 Crie a tabela:
