@@ -8,14 +8,8 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// =======================
-// Controllers
-// =======================
 builder.Services.AddControllers();
 
-// =======================
-// Swagger (Swashbuckle)
-// =======================
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
@@ -45,23 +39,15 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
-// =======================
-// Database (PostgreSQL)
-// =======================
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(
         builder.Configuration.GetConnectionString("DefaultConnection")
     )
 );
 
-// =======================
-// Services
-// =======================
+
 builder.Services.AddScoped<ProdutoService>();
 
-// =======================
-// JWT Authentication
-// =======================
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -87,9 +73,6 @@ builder.Services.AddAuthentication(options =>
 
 var app = builder.Build();
 
-// =======================
-// Middleware pipeline
-// =======================
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
