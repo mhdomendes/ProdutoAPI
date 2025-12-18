@@ -1,0 +1,6 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="Produtos/ProdutoAPI.csproj" />
+  </Folder>
+  <Project Path="TestProject1/ProdutoAPI.Tests.csproj" Id="d5b2ddee-5ee8-4dc3-9e65-6cb588f4dc39" />
+</Solution>
